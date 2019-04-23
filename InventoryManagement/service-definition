@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: inventory-management
+spec:
+  selector:
+    app: inventory-management
+  ports:
+  - protocol: TCP
+    port: 8080
+  type: NodePort

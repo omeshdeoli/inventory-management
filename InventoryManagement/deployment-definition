@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inventory-management
+spec:
+  selector:
+      matchLabels:
+        app: inventory-management
+  template:
+    metadata:
+      labels:
+        app: inventory-management
+    spec:
+      containers:
+        - name: inventory-management
+          image: inventory-management:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
